@@ -75,10 +75,12 @@ public class Solution {
                 l2 = l2.next;
             }
 
-            n.next = new ListNode((sum + carry) % 10);
+            int total = sum + carry;
+
+            n.next = new ListNode(total % 10);
             n = n.next;
 
-            carry = (sum + carry) / 10;
+            carry = total / 10;
         } while (Objects.nonNull(l1) || Objects.nonNull(l2));
 
         if (carry > 0) {
