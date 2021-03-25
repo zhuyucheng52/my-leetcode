@@ -1,4 +1,4 @@
-package com.echo.problem01;
+package com.echo.problem001;
 
 //给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 的那 两个 整数，并返回它们的数组下标。
 //
@@ -45,7 +45,6 @@ package com.echo.problem01;
 
 
 import com.echo.utils.ArrUtils;
-import sun.jvm.hotspot.utilities.Assert;
 
 import java.util.HashMap;
 import java.util.Map;
