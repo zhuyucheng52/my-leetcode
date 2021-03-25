@@ -81,7 +81,7 @@ public class Solution {
         int maxLength = 4;
         int target = 10;
         for (int i = 0; i < 10000; ++i) {
-            int[] nums = ArrUtils.generateArr(minLength, maxLength, 10);
+            int[] nums = ArrUtils.generateIntArr(minLength, maxLength, 10);
             ArrUtils.print(nums);
             int[] indexs1 = s.twoSum1(nums, target);
             ArrUtils.print(indexs1);

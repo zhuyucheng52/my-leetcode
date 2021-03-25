@@ -33,13 +33,39 @@ public class ArrUtils {
      * @param maxValue  最大值(不包含)
      * @return
      */
-    public static int[] generateArr(int minLength, int maxLength, int maxValue) {
+    public static int[] generateIntArr(int minLength, int maxLength, int maxValue) {
         int length = (int) (Math.random() * (maxLength - minLength)) + minLength;
         int[] arr = new int[length];
         for (int i = 0; i < arr.length; ++i) {
             arr[i] = (int) (Math.random() * maxValue);
         }
         return arr;
+    }
+
+    /**
+     * 生成小写字符数组
+     * @param minLength
+     * @param maxLength
+     * @return
+     */
+    public static char[] generateCharArr(int minLength, int maxLength) {
+        int length = (int) (Math.random() * (maxLength - minLength)) + minLength;
+        char[] arr = new char[length];
+        for (int i = 0; i < arr.length; ++i) {
+            int random = (int) (Math.random() * (int) ('z' - 'a' + 1));
+            arr[i] = (char) (random + 'a');
+        }
+        return arr;
+    }
+
+    /**
+     * 生成字符串
+     * @param minLength
+     * @param maxLength
+     * @return
+     */
+    public static String generateStr(int minLength, int maxLength) {
+        return new String(generateCharArr(minLength, maxLength));
     }
 
     /**

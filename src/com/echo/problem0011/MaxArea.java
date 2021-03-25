@@ -86,7 +86,7 @@ public class MaxArea {
     public static void main(String[] args) {
         MaxArea maxArea = new MaxArea();
         for (int i = 0; i < 10000; ++i) {
-            int[] arr = ArrUtils.generateArr(2, 5, 10);
+            int[] arr = ArrUtils.generateIntArr(2, 5, 10);
             ArrUtils.print(arr);
             int max1 = maxArea.maxArea1(arr);
             int max2 = maxArea.maxArea2(arr);

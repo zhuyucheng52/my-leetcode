@@ -48,16 +48,15 @@ package com.echo.problem0003;
 // 👍 5193 👎 0
 
 
+import com.echo.utils.ArrUtils;
+import sun.jvm.hotspot.utilities.Assert;
+
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 public class Solution {
-    public int lengthOfLongestSubstring(String s) {
-       if (s.length() == 0)  {
-           return 0;
-       }
+    public int lengthOfLongestSubstring1(String s) {
        Set<Character> set = new HashSet<>();
        int j = 0;
        int max = 0;
@@ -76,10 +75,30 @@ public class Solution {
        return max;
     }
 
+    public int lengthOfLongestSubstring2(String s) {
+        int i = 0;
+        int j = i;
+        int max = 0;
+        while (i++ < s.length()) {
+            Set<Character> set = new HashSet<>();
+            while (j < s.length() && !set.contains(s.charAt(j))) {
+                set.add(s.charAt(j++));
+                max = Math.max(max, set.size());
+            }
+            j = i;
+        }
+        return max;
+    }
+
     public static void main(String[] args) {
         Solution s = new Solution();
-        int max = s.lengthOfLongestSubstring("abb");
-        System.out.println(max);
+        for (int i = 0; i < 10000; ++i) {
+            String str = ArrUtils.generateStr(5, 10);
+            int max1 = s.lengthOfLongestSubstring1(str);
+            int max2 = s.lengthOfLongestSubstring2(str);
+//            System.out.println(str + "\t" + max1);
+            Assert.that(max1 == max2, "计算错误");
+        }
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
