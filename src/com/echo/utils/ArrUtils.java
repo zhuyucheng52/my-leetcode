@@ -48,7 +48,7 @@ public class ArrUtils {
      */
     public static void print(int[] indexs) {
         for (int i = 0; i < indexs.length; ++i) {
-            System.out.print(indexs[i] + " ");
+            System.out.print(indexs[i] + "\t");
         }
         System.out.println();
     }

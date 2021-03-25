@@ -1,4 +1,4 @@
-package com.echo.problem011;
+package com.echo.problem0011;
 
 import com.echo.utils.ArrUtils;
 import sun.jvm.hotspot.utilities.Assert;
