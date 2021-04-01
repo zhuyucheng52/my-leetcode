@@ -1,6 +1,6 @@
 package com.echo.sort;
 
-import java.util.SortedMap;
+import com.echo.utils.ArrUtils;
 
 /**
  * @author yucheng
@@ -17,33 +17,19 @@ public class BubbleSort {
         for (int i = 0; i < arr.length - 1; ++i) {
             for (int j = arr.length - 1; j > i; --j) {
                 if (arr[j] < arr[j - 1]) {
-                    swap(arr, j, j - 1);
-                    print(arr);
+                    ArrUtils.swap(arr, j, j - 1);
+                    ArrUtils.print(arr);
                 }
             }
         }
         return arr;
     }
 
-    public void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-
     public static void main(String[] args) {
         BubbleSort b = new BubbleSort();
         int[] arr = new int[] {3, 5, 2, 1};
-        print(arr);
-        int[] sortedArr = b.sort(arr);
-        print(sortedArr);
-
+        ArrUtils.print(arr);
+        b.sort(arr);
     }
 
-    private static void print(int[] arr) {
-        for (int i : arr) {
-            System.out.print(i + "\t");
-        }
-        System.out.println();
-    }
 }
