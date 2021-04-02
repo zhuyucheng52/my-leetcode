@@ -10,7 +10,7 @@ import com.echo.utils.ArrUtils;
 
 public class InsertSort {
     public void sort(int[] arr) {
-        for (int i = 0; i < arr.length; ++i) {
+        for (int i = 0; i < arr.length - 1; ++i) {
             for (int j = i + 1; j > 0 && j < arr.length; --j) {
                 if (arr[j - 1] > arr[j]) {
                     ArrUtils.swap(arr, j - 1, j);
