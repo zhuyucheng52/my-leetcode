@@ -43,6 +43,20 @@ public class ArrUtils {
     }
 
     /**
+     *
+     * @param length
+     * @param maxValue
+     * @return
+     */
+    public static int[] generateIntArr(int length, int maxValue) {
+        int[] arr = new int[length];
+        for (int i = 0; i < arr.length; ++i) {
+            arr[i] = (int) (Math.random() * maxValue);
+        }
+        return arr;
+    }
+
+    /**
      * 生成小写字符数组
      * @param minLength
      * @param maxLength
