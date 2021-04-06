@@ -98,4 +98,10 @@ public class ArrUtils {
         arr[i] = arr[j];
         arr[j] = temp;
     }
+
+    public static int[] arrCopy(int[] arr) {
+        int[] target = new int[arr.length];
+        System.arraycopy(arr, 0, target, 0, target.length);
+        return target;
+    }
 }
